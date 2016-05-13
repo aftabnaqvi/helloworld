@@ -21,7 +21,7 @@
   </target>
 
   <!-- Define the CLASSPATH -->
-  <path id="compile.classpath">
+  <!-- <path id="compile.classpath">
     <fileset dir="${tcserver.home}/bin">
       <include name="*.jar"/>
     </fileset>
@@ -29,7 +29,7 @@
     <fileset dir="${tcserver.home}/lib">
       <include name="*.jar"/>
     </fileset>
-  </path>
+  </path> -->
 
   <target name="all" depends="clean,compile,dist"
           description="Clean work dirs, then compile and create a WAR"/>
