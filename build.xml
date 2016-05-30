@@ -11,8 +11,6 @@
   <target name="help">
     <echo>You can use the following targets:</echo>
     <echo> </echo>
-    <echo>  help    : (default) Prints this message </echo>
-    <echo>  all     : Cleans, compiles, and packages application</echo>
     <echo>  clean   : Deletes work directories</echo>
     <echo>  compile : Compiles servlets into class files</echo>
     <echo>  dist    : Packages artifacts into a deployable WAR</echo>
@@ -21,19 +19,6 @@
     <echo>prompt> ant all </echo>
   </target>
 
-  <!-- Define the CLASSPATH -->
-  <path id="compile.classpath">
-    <fileset dir="${tcserver.home}/bin">
-      <include name="*.jar"/>
-    </fileset>
-    <pathelement location="${tcserver.home}/lib"/>
-    <fileset dir="${tcserver.home}/lib">
-      <include name="*.jar"/>
-    </fileset>
-  </path> 
-
-  <target name="all" depends="clean,compile,dist"
-          description="Clean work dirs, then compile and create a WAR"/>
 
   <target name="clean"
           description="Delete old work and dist directories">
@@ -41,17 +26,7 @@
     <delete dir="${dist.home}"/>
   </target>
 
-  <target name="prepare" depends="clean"
-          description="Create working dirs and copy static files to work dir">
-    <mkdir  dir="${dist.home}"/>
-    <mkdir  dir="${work.home}/WEB-INF/classes"/>
-    <!-- Copy static HTML and JSP files to work dir -->
-    <copy todir="${work.home}">
-      <fileset dir="${web.home}"/>
-    </copy>
-  </target>
-
-  <target name="compile" depends="prepare"
+  <target name="compile" 
           description="Compile Java sources and copy to WEB-INF/classes dir">
     <javac srcdir="${src.home}"
           destdir="${work.home}/WEB-INF/classes">
