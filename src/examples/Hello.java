@@ -43,7 +43,7 @@ public final class Hello extends HttpServlet {
         writer.println("<img src=\"images/springsource.png\">");
         writer.println("</td>");
         writer.println("<td>");
-        writer.println("<h1>Sample Application Servlet one more try :) - SABA-1- SABA-1 h1>");
+        writer.println("<h1>Sample Application Servlet one more try :) - SABA-1 SABA-1 h1>");
         writer.println("<h1>Lets see if jenkins picks this job after checkin....</h1>");
         writer.println("<h1>One more test ... :)</h1>");
         writer.println("</td>");
