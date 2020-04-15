@@ -10,7 +10,7 @@ pipeline {
     stage('building') {
       steps {
         sh '''echo "Building the project"
-build build.xml'''
+build.xml'''
       }
     }
 
