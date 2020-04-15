@@ -10,10 +10,8 @@ pipeline {
     stage('building') {
       steps {
         sh '''echo "Building the project"
-withAnt(installation: \'LocalAnt\') {
-// some block
-   sh "ant build"
-}'''
+sh "ant build"
+'''
       }
     }
 
