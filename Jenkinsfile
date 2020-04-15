@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('cloning') {
       steps {
-        git(url: 'git@github.com:aftabnaqvi/helloworld.git', branch: 'master', changelog: true)
+        git(url: 'git@github.com:aftabnaqvi/helloworld.git', branch: 'master', changelog: true, credentialsId: 'jenkens-nuc-key', poll: true)
       }
     }
 
