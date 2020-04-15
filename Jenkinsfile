@@ -9,7 +9,8 @@ pipeline {
 
     stage('building') {
       steps {
-        withAnt()
+        sh '''ant
+#ANT plugin - made this happen '''
       }
     }
 
