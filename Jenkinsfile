@@ -9,7 +9,13 @@ pipeline {
 
     stage('building') {
       steps {
-        sh 'ant'
+        withAnt()
+      }
+    }
+
+    stage('deploy') {
+      steps {
+        sh 'echo "deploy to some remote server."'
       }
     }
 
