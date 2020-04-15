@@ -10,7 +10,10 @@ pipeline {
     stage('building') {
       steps {
         sh '''echo "Building the project"
-ant build.xml'''
+withAnt(installation: \'LocalAnt\') {
+// some block
+   sh "ant build"
+}'''
       }
     }
 
