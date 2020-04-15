@@ -9,8 +9,10 @@ pipeline {
 
     stage('building') {
       steps {
-        sh '''echo "Building the project"
-sh "ant build"
+        sh '''def antVersion = \'Ant-1.10.7\'
+withEnv( ["ANT_HOME=${tool antVersion}"] ) {
+    sh \'$ANT_HOME/bin/ant\'
+}
 '''
       }
     }
